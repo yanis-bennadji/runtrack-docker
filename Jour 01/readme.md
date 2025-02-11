@@ -145,3 +145,10 @@ Example :
 
 ![alt text](images/docker-prune.png)
 
+* Force the removal of an active container
+
+When we want to force something, we usually add `-f` in the command line.
+
+```sh
+docker rm  -f <container_id_or_name>
+```
