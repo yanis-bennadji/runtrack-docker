@@ -36,3 +36,20 @@ After using this command line you should see this :
 
 ![alt text](images/docker-screen1.png)
 
+
+* Lets run the image to make sure everything is right let's run this image by creating a container from it
+
+We are gonna use this command line to create the container :
+
+```sh
+docker run -d -p 8088:3000 --name welcome-to-docker learn-docker
+```
+And then use the next command to check if the container is running
+
+```sh
+docker ps
+```
+
+![alt text](images/vscode-terminal-container.png)
+
+
