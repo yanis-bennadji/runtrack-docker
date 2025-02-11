@@ -61,3 +61,32 @@ We are gonna go to this adress `localhost:8088` and if you followed the steps be
 
 Perfect ! Now lets see if we can change a bit this page so it feels a bit more personal.
 
+
+#### 🎨 Lets change the code in VSCode so we can customize this page
+
+Now, by looking at the different files available in our _welcome-to-docker_ folder, we can see in the _Dockerfile_ that our application is created from the _app.js_ file.
+
+You can now make some changes in _app.js_ and _App.css_ to customize our application. However, after doing so, it seems that we have some issues—our changes are not being applied.
+
+To fix this issue, we need to rebuild our image and container to update everything. Our current container is based on the previous version before the changes, so we are going to run the following commands:
+
+```sh
+docker build -t welcome-to-docker .
+```
+
+We run the exact same command to rebuild our image while keeping the same name. After doing this, it's time to remove our previous container and create a new one from our updated image:
+
+```sh
+docker rm -f welcome-to-docker
+```
+
+Now lets create the container again.
+
+```sh
+docker run -d -p 8088:3000 --name welcome-to-docker welcome-to-docker
+```
+
+Go back to `localhost:8088` to see the different changes ! 
+
+![alt text](images/chrome-container2.png)
+
