@@ -159,3 +159,10 @@ docker rm  -f <container_id_or_name>
 docker rmi <image_name>
 ```
 
+
+* Delete multiple images 
+
+```sh
+docker rmi <image_name1> <image_name2>
+```
+
