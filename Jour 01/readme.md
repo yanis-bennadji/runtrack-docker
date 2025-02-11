@@ -86,3 +86,22 @@ docker stop first-container
 ```
 
 ![alt text](images/docker-stop2.png)
+
+
+* Supprimer votre container
+
+Dans le cas ou notre commande ne contient pas `--rm` on dois utiliser la commmande suivante : 
+
+```sh
+docker rm first-container
+```
+
+![alt text](images/docker-rm.png)
+
+Il faut bien penser à stop le container avant de le supprimer, sinon il est possible de forcer l'arrêt et la suppression en une seule commande : 
+
+```sh
+docker rm -f first-container
+```
+
+* Supprimer vot
