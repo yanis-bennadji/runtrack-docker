@@ -178,3 +178,14 @@ docker image prune -a
 Example :
 
 ![alt text](images/docker-image-prune.png)
+
+
+* Delete all images event used ones and force it
+
+To delete all the images event the used ones we are gonna use this command that will allow use to force with `-f`, and the `$(docker images -aq)` part is a command substitution so the commandes inside the `()` runs. The `-a` flag means "all images" and the `-q` "quiet".
+
+```sh
+docker rmi -f $(docker images -aq)
+```
+
+![alt text](images/docker-rmi2.png)
