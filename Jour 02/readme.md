@@ -90,3 +90,33 @@ Go back to `localhost:8088` to see the different changes !
 
 ![alt text](images/chrome-container2.png)
 
+
+#### 🌐 Let's publish this image so we can share it with people
+
+We have our custom image that represents us. Now, the next step is to share it with others.
+
+First, if you haven't already, log in to Docker using the following command:
+
+```sh
+docker login
+```
+
+Enter your DockerHub username and password.
+
+When you are succesfully connected, we are gonna push our image to Docker hub using the following commands : 
+
+```sh
+docker tag <local-image-name> <dockerhub-username>/<repository-name>
+```
+
+After this one use : 
+
+```sh
+docker push <dockerhub-username>/<repository-name>
+```
+
+Don't forget to replace your username and the local image name with your own, and choose a repository name that suits your needs.
+
+Now if you check your own DockerHub you should be able to see the image you have just published ! 
+
+![alt text](images/dockerhub-screen1.png)
