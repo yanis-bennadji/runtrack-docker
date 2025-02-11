@@ -41,4 +41,13 @@ docker stop
 
 ![alt text](images/docker-stop.png)
 
+* Récupérer l'image Docker
+
+```sh
+docker pull
+```
+Dans ce cas la on va pull l'image `nginx` pour la suite.
+
+![alt text](images/docker-pull.png)
+
 
