@@ -152,3 +152,10 @@ When we want to force something, we usually add `-f` in the command line.
 ```sh
 docker rm  -f <container_id_or_name>
 ```
+
+* Delete a specific image 
+
+```sh
+docker rmi <image_name>
+```
+
