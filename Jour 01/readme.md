@@ -166,3 +166,15 @@ docker rmi <image_name>
 docker rmi <image_name1> <image_name2>
 ```
 
+
+* Delete all unused images 
+  
+When we use the `-a` flag, it ensures that only the unused images are removed.
+
+```sh
+docker image prune -a
+```
+
+Example :
+
+![alt text](images/docker-image-prune.png)
