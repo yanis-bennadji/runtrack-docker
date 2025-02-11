@@ -51,3 +51,10 @@ Dans ce cas la on va pull l'image `nginx` pour la suite.
 ![alt text](images/docker-pull.png)
 
 
+```sh
+docker images
+```
+
+On utilise cette commande de nouveau avec cette fois ci un résultat différent.
+
+![alt text](images/docker-images2.png)
