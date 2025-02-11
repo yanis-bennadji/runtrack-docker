@@ -64,7 +64,7 @@ We use this command again but this time with a different result.
 We are gonna use the following command :
 
 ```sh
-docker run -it --rm -p --name first-container 8080:80 nginx
+docker run -it --rm --name first-container -p 8080:80 nginx
 ```
 
 This allows us to create a temporary nginx container.
@@ -114,4 +114,4 @@ docker rmi nginx
 
 ![alt text](images/docker-rmi.png)
 
-We can see that `nginx` was present before using this command.
+We can see that `nginx` was present before using this.
