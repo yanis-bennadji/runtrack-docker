@@ -1,13 +1,13 @@
-### 📦 Runtrack Docker Jour 01
+### 📦 Runtrack Docker Day 01
 
-* Vérifier la version de Docker : 
+* Check Docker version : 
 ```sh
 docker --version
 ```
 
 ![alt text](images/docker-version.png)
 
-* Tester les commandes de base : 
+* Testing basic commands : 
 
 ```sh
 docker info
@@ -41,12 +41,12 @@ docker stop
 
 ![alt text](images/docker-stop.png)
 
-* Récupérer l'image Docker
+* Pull a Docker images
 
 ```sh
 docker pull
 ```
-Dans ce cas la on va pull l'image `nginx` pour la suite.
+In this case we are gonna pull `nginx` for the rest of the work.
 
 ![alt text](images/docker-pull.png)
 
@@ -55,31 +55,31 @@ Dans ce cas la on va pull l'image `nginx` pour la suite.
 docker images
 ```
 
-On utilise cette commande de nouveau avec cette fois ci un résultat différent.
+We use this command again but this time with a different result.
 
 ![alt text](images/docker-images2.png)
 
-* Construisez le container Docker 
+* Create the Docker container 
 
-On va utiliser la commande suivante :
+We are gonna use the following command :
 
 ```sh
 docker run -it --rm -p --name first-container 8080:80 nginx
 ```
 
-Cela nous permet de créer un container temporaire nginx.
+This allows us to create a temporary nginx container.
 
 ![alt text](images/docker-run2.png)
 
-Sur Docker Desktop on vois également le résultat.
+We can see the result of this in Docker Desktop too.
 
 ![alt text](images/docker-desktop.png)
 
-* Arrêter votre container 
+* Stop your container 
 
-Comme notre container est en mode interactif avec `-it`, on stop le container avec `CTRL+C` et il se supprimera automatiquement avec `--rm`.
+Since our container is in interactive mode `-it`, we stop it using `CTRL+C` and it will delete automatically with `--rm`.
 
-Dans le cas ou notre container est en mode détaché avec `-d`, il faudra écrire dans un autre terminal la commande suivante : 
+In the case where our container is in detached mode `-d`, we will need to use the following command : 
 
 ```sh
 docker stop first-container
@@ -88,9 +88,9 @@ docker stop first-container
 ![alt text](images/docker-stop2.png)
 
 
-* Supprimer votre container
+* Delete our container
 
-Dans le cas ou notre commande ne contient pas `--rm` on dois utiliser la commmande suivante : 
+In the case where our command dont contain `--rm` we must use the following command : 
 
 ```sh
 docker rm first-container
@@ -98,10 +98,20 @@ docker rm first-container
 
 ![alt text](images/docker-rm.png)
 
-Il faut bien penser à stop le container avant de le supprimer, sinon il est possible de forcer l'arrêt et la suppression en une seule commande : 
+Remember to stop your container before trying to delete it, if not you can force both the stop and the delete with the following command : 
 
 ```sh
 docker rm -f first-container
 ```
 
-* Supprimer vot
+* Delete the docker image
+
+To be able to delete the `nginx` image, we must use this command :
+
+```sh
+docker rmi nginx
+```
+
+![alt text](images/docker-rmi.png)
+
+We can see that `nginx` was present before using this command.
