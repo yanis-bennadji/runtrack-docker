@@ -75,6 +75,11 @@ We can see the result of this in Docker Desktop too.
 
 ![alt text](images/docker-desktop.png)
 
+If we want to access the container with a web browser we need to go to :
+`localhost:8080`
+
+![alt text](images/chrome-screen.png)
+
 * Stop your container 
 
 Since our container is in interactive mode `-it`, we stop it using `CTRL+C` and it will delete automatically with `--rm`.
@@ -115,3 +120,28 @@ docker rmi nginx
 ![alt text](images/docker-rmi.png)
 
 We can see that `nginx` was present before using this.
+
+##### List of commands to be able to delete different things
+
+* A specific container 
+
+```sh
+docker rm <container_id_or_name>
+```
+
+* Multiple container at once
+
+```sh
+docker rm <container_name_or_id1> <container_name_or_id2>
+```
+
+* All stopped containers
+
+```sh
+docker container prune
+```
+
+Example :
+
+![alt text](images/docker-prune.png)
+
