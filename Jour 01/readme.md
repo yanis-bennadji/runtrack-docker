@@ -74,3 +74,15 @@ Cela nous permet de créer un container temporaire nginx.
 Sur Docker Desktop on vois également le résultat.
 
 ![alt text](images/docker-desktop.png)
+
+* Arrêter votre container 
+
+Comme notre container est en mode interactif avec `-it`, on stop le container avec `CTRL+C` et il se supprimera automatiquement avec `--rm`.
+
+Dans le cas ou notre container est en mode détaché avec `-d`, il faudra écrire dans un autre terminal la commande suivante : 
+
+```sh
+docker stop first-container
+```
+
+![alt text](images/docker-stop2.png)
