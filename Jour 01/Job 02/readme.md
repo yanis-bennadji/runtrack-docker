@@ -120,3 +120,8 @@ Don't forget to replace your username and the local image name with your own, an
 Now if you check your own DockerHub you should be able to see the image you have just published ! 
 
 ![alt text](images/dockerhub-screen1.png)
+
+#### 🤝 Now let's pull, change and publish an image from someone
+
+Now we want to pull 
+
