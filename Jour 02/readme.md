@@ -39,5 +39,19 @@ It will create an apache server and show us the `index.php`
 Now it's time to create create our image from our `Dockerfile` and run a container with it.
 
 ```sh
+docker build -t apache-image .
+```
 
+```sh
+docker run -d -name apache-container -p 8080:80 apache-image
+```
+
+Now if we go to `localhost:8080`, we should be able to see all the informations about our server running like this : 
+
+![alt text](<Job 01/images/phpinfo.png>)
+
+You can now see all the informations you want, you can now stop the container using : 
+
+```sh
+docker stop apache-container
 ```
