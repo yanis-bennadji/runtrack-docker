@@ -56,3 +56,22 @@ You can now play Mario on your browser !
 
 ![alt text](images/mario-again.png)
 
+#### 💻 Different usage of Docker (Terminal/Desktop)
+
+
+* For each case coming up, we are gonna see how we can solve the problem using the terminal and Docker Desktop, that's why we created two container.
+
+
+First lets see how we can stop a container : 
+   * With the terminal : `docker stop <container_name>` 
+   * With Docker Desktop : Go in the containers menu and in the action section, click the stop button.
+  
+
+Delete a container : 
+   * With the terminal : `docker rm <container_name>`
+   * With Docker Desktop : Go in the containers menu and in the action section, click on the trash bin to delete it.
+  
+
+Delete an image : 
+   * With the terminal : `docker rmi <image_name>`
+   * With Docker Desktop : Go in the image menu and in the action section, click on the trash bin to delete it.
