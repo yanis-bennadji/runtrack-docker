@@ -123,5 +123,77 @@ Now if you check your own DockerHub you should be able to see the image you have
 
 #### 🤝 Now let's pull, change and publish an image from someone
 
-Now we want to pull 
+Now, we want to pull an image from someone else. In my case, I'm going to pull Arthur's image and create a container from it:
+
+```sh
+docker pull derroce/webapp:dev
+```
+```sh
+docker run -d --name container1 -p 8088:3000 derroce/webapp:dev
+```
+
+If we now take a look at this container on our browser, it should look like this :
+
+![alt text](images/chrome-arthur.png)
+
+It's now time to make some changes to this image, but how? We don't have Arthur's local files on our computer, so let's copy them from the container!
+
+The first step is to locate where the files are in the container. So, in the terminal, we are going to use these command lines:
+
+```sh
+docker exec -it container1 sh
+```
+
+It allows us to run a `bash` terminal in our previously created container, enabling us to execute commands inside it.
+
+Now we want to locate where are the `App.js` and `App.css` files so we can copy them and change them so we use : 
+
+```sh
+ls -R
+```
+
+
+![alt text](images/container-bash.png)
+
+We can now see that our files are located in the /src folder so let's exit this bash terminal with `exit`.
+
+We are back in our PowerShell, so let's copy the files now that we know where they are! Since we need two files, we are going to copy them using `docker cp`.
+
+```sh
+docker cp container1:/app/src/App.css ./src/App.css
+```
+
+```sh
+docker cp container1:/app/src/App.js ./src/App.js
+```
+
+And now, if you take a look in your IDE, you should be able to see the files locally and modify them as needed.
+
+Now we just have to build this image again and publish it on our Dockerhub with : 
+
+```sh
+docker build -t derroce/webapp:dev .
+```
+
+I'm gonna do a quick tag change so we can see that its my version (change it according to your username) : 
+
+```sh
+docker tag derroce/webapp:dev yanisb27/webapp:dev
+```
+
+Now lets publish it on Dockerhub : 
+
+```sh
+docker push yanisb27/webapp:dev
+```
+
+And it's done ! We have now published our image on Dockerhub ! 
+
+![alt text](images/dockerhub-screen2.png)
+
+
+
+
+
+
 
