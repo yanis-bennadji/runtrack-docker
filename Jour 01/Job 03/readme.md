@@ -25,3 +25,34 @@ docker pull pengbai/docker-supermario
 
 You will notice after this that it appears on your Images list in Docker Desktop now.
 
+
+#### 📦 Let's create a container from this now (and play a bit)
+
+Now go to the "containers" menu on the left side bar and lets run a container, assign it the port 8600 on the 8080 in detached mode.
+
+```sh
+docker run -d --name supermario -p 8600:8080 pengbai/docker-supermario
+```
+
+Create another container with a different port right now, we will need it later.
+
+```sh
+docker run -d --name supermario2 -p 8700:8080 pengbai/docker-supermario
+```
+
+Now our container is running and it appears on Docker Desktop. We have two way to access it, first with the `localhost:8600` adress on our web browser, or by clicking on the port in Docker Desktop : 
+
+![alt text](images/dd-container.png)
+
+And this should appear : 
+
+![alt text](images/chrome-mario.png)
+
+You can now play Mario on your browser ! 
+
+![alt text](images/mario-map.png)
+
+![alt text](images/mario-move.png)
+
+![alt text](images/mario-again.png)
+
