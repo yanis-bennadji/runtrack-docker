@@ -3,9 +3,6 @@ FROM php:7.4-fpm
 
 RUN apt-get update && apt-get install -y nginx
 
-
-
-
 RUN echo 'server { \
 listen 80; \
 server_name localhost; \
@@ -26,6 +23,7 @@ server_name localhost; \
         COPY results.json /usr/share/nginx/html/results/results.json
         
 RUN chmod -R 777 /usr/share/nginx/html/results/
+
 EXPOSE 80
 
 CMD ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]
